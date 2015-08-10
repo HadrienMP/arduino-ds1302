@@ -88,6 +88,28 @@ Time::Time(const uint16_t yr, const uint8_t mon, const uint8_t date,
   this->day  = day;
 }
 
+Time::Time(const uint16_t yr, const uint8_t mon, const uint8_t date,
+           const uint8_t hr, const uint8_t min, const uint8_t sec,
+           const uint8_t day) {
+  this->yr   = yr;
+  this->mon  = mon;
+  this->date = date;
+  this->hr   = hr;
+  this->min  = min;
+  this->sec  = sec;
+  
+  switch (day) {
+    case 1: this->day  = kSunday; break;
+    case 2: this->day  = kMonday; break;
+    case 3: this->day  = kTuesday; break;
+    case 4: this->day  = kWednesday; break;
+    case 5: this->day  = kThursday; break;
+    case 6: this->day  = kFriday; break;
+    case 7: this->day  = kSaturday; break;
+    default: this->day = kSunday; break;
+  }
+}
+
 DS1302::DS1302(const uint8_t ce_pin, const uint8_t io_pin,
                const uint8_t sclk_pin) {
   ce_pin_ = ce_pin;

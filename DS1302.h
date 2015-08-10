@@ -35,6 +35,20 @@ class Time {
   Time(uint16_t yr, uint8_t mon, uint8_t date,
        uint8_t hr, uint8_t min, uint8_t sec,
        Day day);
+       
+  // Creates a Time object with a given time.
+  //
+  // Args:
+  //   yr: year. Range: {2000, ..., 2099}.
+  //   mon: month. Range: {1, ..., 12}.
+  //   date: date (of the month). Range: {1, ..., 31}.
+  //   hr: hour. Range: {0, ..., 23}.
+  //   min: minutes. Range: {0, ..., 59}.
+  //   sec: seconds. Range: {0, ..., 59}.
+  //   day: day of the week. Sunday is 1. Range: {1, ..., 7}.
+  Time(uint16_t yr, uint8_t mon, uint8_t date,
+       uint8_t hr, uint8_t min, uint8_t sec,
+       uint8_t day);
 
   uint8_t sec;
   uint8_t min;
